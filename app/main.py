@@ -43,6 +43,6 @@ def frontend():
     return FileResponse(STATIC_DIR / "index.html")
 
 
-@app.get("/login", include_in_schema=False)
+@app.api_route("/login", methods=["GET", "POST"], include_in_schema=False)
 def login():
     return FileResponse(STATIC_DIR / "login.html")
