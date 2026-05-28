@@ -115,6 +115,19 @@
 
     button:hover { background: #2980b9; }
 
+    #msg {
+      display: none;
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: 10px;
+      background: #ebf5fb;
+      color: #2980b9;
+      font-size: .92rem;
+      line-height: 1.4;
+    }
+
+    #msg.visible { display: block; }
+
     .footer-link {
       margin-top: 1.4rem;
       text-align: center;
@@ -129,7 +142,7 @@
     <h1>Bienvenido de nuevo</h1>
     <p>Ingresa tus credenciales para acceder a tu panel de tareas y continuar con tu organización diaria.</p>
 
-    <form action="/login" method="post">
+    <form id="login-form">
       <label for="email">
         Correo electrónico
         <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
@@ -151,7 +164,19 @@
       <button type="submit">Iniciar sesión</button>
     </form>
 
+    <div id="msg" role="status" aria-live="polite"></div>
     <p class="footer-link">¿No tienes cuenta? <a href="/">Volver a tareas</a></p>
   </main>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const message = document.getElementById('msg');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      message.textContent = 'Plantilla de login lista para integrarse con la autenticación del sistema.';
+      message.classList.add('visible');
+    });
+  </script>
 </body>
 </html>
