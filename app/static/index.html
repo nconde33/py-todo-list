@@ -24,6 +24,31 @@
       color: #2c3e50;
     }
 
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .topbar a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .55rem 1rem;
+      border-radius: 999px;
+      background: #fff;
+      color: #3498db;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .topbar a:hover {
+      background: #3498db;
+      color: #fff;
+    }
+
     .container {
       max-width: 640px;
       margin: 0 auto;
@@ -235,6 +260,9 @@
 <body>
 
 <div class="container">
+  <div class="topbar">
+    <a href="/login">Iniciar sesión</a>
+  </div>
   <h1>📝 TODO List</h1>
 
   <div id="msg"></div>

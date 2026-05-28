@@ -22,6 +22,8 @@ python -m uvicorn app.main:app --reload
 
 El servidor se levanta en `http://localhost:8000`.
 
+La interfaz web principal está disponible en `/` y la nueva plantilla de login en `/login`.
+
 ## Endpoints
 
 | Método   | Ruta            | Descripción                                      |
