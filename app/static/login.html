@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión | TODO List</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+      padding: 2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      background: #ebf5fb;
+      color: #2980b9;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: .6rem;
+    }
+
+    p {
+      color: #5d6d7e;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: .95rem;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #d6dbdf;
+      border-radius: 10px;
+      padding: .8rem .95rem;
+      font-size: .95rem;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: .88rem;
+      color: #5d6d7e;
+    }
+
+    .options label {
+      flex-direction: row;
+      align-items: center;
+      gap: .45rem;
+      font-weight: 400;
+    }
+
+    .options input {
+      width: auto;
+      padding: 0;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      background: #3498db;
+      color: #fff;
+      font-size: .98rem;
+      font-weight: 600;
+      padding: .9rem 1rem;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    button:hover { background: #2980b9; }
+
+    #msg {
+      display: none;
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: 10px;
+      background: #ebf5fb;
+      color: #2980b9;
+      font-size: .92rem;
+      line-height: 1.4;
+    }
+
+    #msg.visible { display: block; }
+
+    .footer-link {
+      margin-top: 1.4rem;
+      text-align: center;
+      font-size: .9rem;
+      color: #5d6d7e;
+    }
+  </style>
+</head>
+<body>
+  <main class="login-card">
+    <span class="badge">Acceso seguro</span>
+    <h1>Bienvenido de nuevo</h1>
+    <p>Ingresa tus credenciales para acceder a tu panel de tareas y continuar con tu organización diaria.</p>
+
+    <form id="login-form">
+      <label for="email">
+        Correo electrónico
+        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+      </label>
+
+      <label for="password">
+        Contraseña
+        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required />
+      </label>
+
+      <div class="options">
+        <label for="remember">
+          <input type="checkbox" id="remember" name="remember" />
+          Recordarme
+        </label>
+        <a href="/">Volver a tareas</a>
+      </div>
+
+      <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <div id="msg" role="status" aria-live="polite"></div>
+    <p class="footer-link">¿No tienes cuenta? <a href="/">Volver a tareas</a></p>
+  </main>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const message = document.getElementById('msg');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      message.textContent = 'Plantilla de login lista para integrarse con la autenticación del sistema.';
+      message.classList.add('visible');
+    });
+  </script>
+</body>
+</html>
